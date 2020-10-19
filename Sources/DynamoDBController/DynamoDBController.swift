@@ -7,15 +7,14 @@
 
 import AWSLambdaEvents
 import AWSLambdaRuntime
-import AsyncHTTPClient
-import AWSDynamoDB
 import DynamoDBService
+import SotoDynamoDB
 
 public class DynamoDBController<T: DynamoDBConvertable & Codable> {
     
     private let dbService: DBService
     
-    public init(httpClient: HTTPClient, tableName: String, region: Region) {
+    public init(httpClient: AWSClient, tableName: String, region: Region) {
         dbService = DBService(httpClient: httpClient, tableName: tableName, region: region)
     }
     
