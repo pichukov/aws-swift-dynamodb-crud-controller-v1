@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ErrorType: Error {
+public enum ErrorType: Error {
     case general
     case api
     case network
